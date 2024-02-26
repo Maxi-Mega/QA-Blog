@@ -2,8 +2,6 @@
 import {defineProps, toRefs} from "vue";
 import {Article} from "../composables/useArticles.ts";
 
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
-
 const props = defineProps<{
   article: Article,
 }>();
