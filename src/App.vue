@@ -1,16 +1,15 @@
 <script lang="ts" setup>
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 </script>
 
 <template>
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <header class="flex items-center justify-between py-4 md:py-8">
-      <a aria-label="logo" class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
-         :href="baseUrl + '/'">
+      <router-link class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
+         to="/">
         <img alt="Logo" src="./assets/vue.svg">
 
         My blog
-      </a>
+      </router-link>
       <nav aria-label="Main navigation" class="hidden gap-12 lg:flex">
         <ul class="flex flex-row gap-3">
           <li>
@@ -34,10 +33,20 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
     <footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
       <div class="flex flex-col items-center border-t border-gray-500 pt-6">
         <nav class="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
-          <a class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-             :href="baseUrl + '/'">Home</a>
-          <a class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-             :href="baseUrl + '/login'">Login</a>
+          <ul class="flex flex-row gap-3">
+            <li>
+              <router-link class="text-lg text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+                           to="/">
+                Home
+              </router-link>
+            </li>
+            <li>
+              <router-link class="text-lg text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+                           to="/login">
+                Login
+              </router-link>
+            </li>
+          </ul>
         </nav>
 
         <nav aria-label="Socials navigation" class="flex gap-4">
