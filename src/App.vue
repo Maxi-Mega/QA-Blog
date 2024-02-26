@@ -15,13 +15,13 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
         <ul class="flex flex-row gap-3">
           <li>
             <router-link class="text-lg font-semibold text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                         :to="baseUrl + '/'">
+                         to="/">
               Home
             </router-link>
           </li>
           <li>
             <router-link class="text-lg font-semibold text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                         :to="baseUrl + '/login'">
+                         to="/login">
               Login
             </router-link>
           </li>
