@@ -1,7 +1,6 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {defineProps, toRefs} from "vue";
 import {Article} from "../composables/useArticles.ts";
-import {link} from "../composables/utils.ts";
 
 const props = defineProps<{
   article: Article,
@@ -15,11 +14,12 @@ const truncate = (text: string): string => {
 
 <template>
   <article class="flex flex-col items-center overflow-hidden rounded-lg border md:flex-row">
-    <a href="#"
-       class="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48">
-      <img v-bind:src="link(article.pictureURL)"
-           loading="lazy" v-bind:alt="article.pictureDescription"
-           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"/>
+    <a class="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48"
+       :href="'./article/' + article.slug">
+      <img
+          class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+          loading="lazy" v-bind:alt="article.pictureDescription"
+          :src="'./'+article.pictureURL"/>
     </a>
 
     <div class="flex flex-col gap-2 p-4 lg:p-6">
@@ -30,8 +30,8 @@ const truncate = (text: string): string => {
       </div>
 
       <h2 class="text-xl font-bold text-gray-200">
-        <a v-bind:href="link('/article/' + article.slug)"
-           class="transition duration-100 hover:text-indigo-400 active:text-indigo-600">{{
+        <a class="transition duration-100 hover:text-indigo-400 active:text-indigo-600"
+           :href="'./article/' + article.slug">{{
             article.title
           }}</a>
       </h2>
@@ -39,8 +39,8 @@ const truncate = (text: string): string => {
       <p class="text-gray-300">{{ truncate(article.content) }}</p>
 
       <div class="flex flex-row justify-between">
-        <a v-bind:href="link('/article/' + article.slug)"
-           class="font-semibold text-indigo-400 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Read
+        <a class="font-semibold text-indigo-400 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
+           :href="'./article/' + article.slug">Read
           more of this article</a>
         <p>{{ article.comments.length }} comment{{ article.comments.length == 1 ? "" : "s" }}</p>
       </div>
