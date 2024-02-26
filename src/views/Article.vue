@@ -17,8 +17,8 @@ const article = getArticleBySlug(route.params.slug as string);
           <div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
             <img
                 class="h-full w-full object-cover object-center"
-                loading="lazy" v-bind:alt="article.pictureDescription"
-                v-bind:src="baseUrl + '/'+article.pictureURL"/>
+                loading="lazy" :alt="article.pictureDescription"
+                :src="baseUrl + '/'+article.pictureURL"/>
           </div>
         </div>
 
@@ -59,7 +59,7 @@ const article = getArticleBySlug(route.params.slug as string);
             </tr>
             </tbody>
             <tfoot>
-            <tr class="text-gray-400 text-center">
+            <tr class="text-gray-300 text-center">
               <td>Col 1</td>
               <td>Col 2</td>
               <td>Col 3</td>
