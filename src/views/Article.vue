@@ -2,6 +2,8 @@
 import {useRoute} from "vue-router";
 import {getArticleBySlug} from "../composables/useArticles.ts";
 
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const route = useRoute();
 
 const article = getArticleBySlug(route.params.slug as string);
@@ -16,7 +18,7 @@ const article = getArticleBySlug(route.params.slug as string);
             <img
                 class="h-full w-full object-cover object-center"
                 loading="lazy" v-bind:alt="article.pictureDescription"
-                v-bind:src="'../'+article.pictureURL"/>
+                v-bind:src="baseUrl + '/'+article.pictureURL"/>
           </div>
         </div>
 
