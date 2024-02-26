@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {useRoute} from "vue-router";
 import {getArticleBySlug} from "../composables/useArticles.ts";
+import {link} from "../composables/utils.ts";
 
 const route = useRoute();
 
@@ -14,7 +15,7 @@ const article = getArticleBySlug(route.params.slug as string);
         <div>
           <div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
             <img
-                v-bind:src="article.pictureURL"
+                v-bind:src="link(article.pictureURL)"
                 loading="lazy" v-bind:alt="article.pictureDescription" class="h-full w-full object-cover object-center"/>
           </div>
         </div>

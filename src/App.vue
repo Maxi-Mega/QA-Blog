@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import {link} from "./composables/utils.ts";
 </script>
 
 <template>
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <header class="flex items-center justify-between py-4 md:py-8">
-      <a href="/" class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl" aria-label="logo">
-        <img src="/src/assets/vue.svg" alt="Logo">
+      <a v-bind:href="link('/')" class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
+         aria-label="logo">
+        <img v-bind:src="link('/src/assets/vue.svg')" alt="Logo">
 
         My blog
       </a>
@@ -32,9 +34,10 @@
     <footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
       <div class="flex flex-col items-center border-t border-gray-500 pt-6">
         <nav class="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
-          <a href="/"
+          <a v-bind:href="link('/')"
              class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Home</a>
-          <a href="/about" class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">About</a>
+          <a v-bind:href="link('/about')"
+             class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">About</a>
         </nav>
 
         <nav class="flex gap-4" aria-label="Socials navigation">
