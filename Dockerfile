@@ -10,7 +10,7 @@ RUN yarn install
 
 #CMD yarn dev --host
 
-RUN yarn build --base="/QA-Blog"
+RUN yarn build
 
 FROM nginx:latest
 
