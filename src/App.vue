@@ -5,7 +5,7 @@
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <header class="flex items-center justify-between py-4 md:py-8">
       <router-link class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
-         to="/">
+         :to="{name: 'Home'}">
         <img alt="Logo" src="./assets/vue.svg">
 
         My blog
@@ -14,13 +14,13 @@
         <ul class="flex flex-row gap-3">
           <li>
             <router-link class="text-lg font-semibold text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                         to="/">
+                         :to="{name: 'Home'}">
               Home
             </router-link>
           </li>
           <li>
             <router-link class="text-lg font-semibold text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                         to="/login">
+                         :to="{name: 'Login'}">
               Login
             </router-link>
           </li>
@@ -36,13 +36,13 @@
           <ul class="flex flex-row gap-3">
             <li>
               <router-link class="text-lg text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                           to="/">
+                           :to="{name: 'Home'}">
                 Home
               </router-link>
             </li>
             <li>
               <router-link class="text-lg text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                           to="/login">
+                           :to="{name: 'Login'}">
                 Login
               </router-link>
             </li>

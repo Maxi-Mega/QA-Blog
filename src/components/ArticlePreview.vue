@@ -7,6 +7,8 @@ const props = defineProps<{
 }>();
 const {article} = toRefs(props);
 
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const truncate = (text: string): string => {
   return text.length > 75 ? text.slice(0, 72) + "..." : text;
 }
@@ -16,11 +18,11 @@ const truncate = (text: string): string => {
   <article class="flex flex-col items-center overflow-hidden rounded-lg border md:flex-row">
     <router-link
         class="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48"
-        :to="'/article/' + article.slug">
+        :to="baseUrl+'/article/' + article.slug">
       <img
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
           loading="lazy" v-bind:alt="article.pictureDescription"
-          :src="'./'+article.pictureURL"/>
+          :src="baseUrl+'/'+article.pictureURL"/>
     </router-link>
 
     <div class="flex flex-col gap-2 p-4 lg:p-6">
@@ -43,7 +45,7 @@ const truncate = (text: string): string => {
       <div class="flex flex-row justify-between">
         <router-link
             class="font-semibold text-indigo-400 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-            :to="'/article/' + article.slug">Read
+            :to="baseUrl+'/article/' + article.slug">Read
           more of this article
         </router-link>
         <p>{{ article.comments.length }} comment{{ article.comments.length == 1 ? "" : "s" }}</p>
