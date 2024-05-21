@@ -5,7 +5,7 @@
     <header class="flex items-center justify-between py-4 md:py-8">
       <router-link
         class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
-        :to="{name: 'Home'}"
+        :to="{ name: 'Home' }"
       >
         <img alt="Logo" src="./assets/vue.svg" />
 
@@ -16,7 +16,7 @@
           <li>
             <router-link
               class="text-lg font-semibold text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-              :to="{name: 'Home'}"
+              :to="{ name: 'Home' }"
             >
               Home
             </router-link>
@@ -24,7 +24,7 @@
           <li>
             <router-link
               class="text-lg font-semibold text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-              :to="{name: 'Login'}"
+              :to="{ name: 'Login' }"
             >
               Login
             </router-link>
@@ -42,7 +42,7 @@
             <li>
               <router-link
                 class="text-lg text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                :to="{name: 'Home'}"
+                :to="{ name: 'Home' }"
               >
                 Home
               </router-link>
@@ -50,7 +50,7 @@
             <li>
               <router-link
                 class="text-lg text-gray-100 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-                :to="{name: 'Login'}"
+                :to="{ name: 'Login' }"
               >
                 Login
               </router-link>

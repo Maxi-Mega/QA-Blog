@@ -42,8 +42,8 @@ const article = getArticleBySlug(route.params.slug as string);
               </tr>
             </thead>
             <tbody>
-              <trv-for="_ in [1,2,3,4]">
-                <tdv-for="j in [1,2,3]">{{ j }}</td>
+              <tr v-for="_ in [1, 2, 3, 4]">
+                <td v-for="j in [1, 2, 3]">{{ j }}</td>
               </tr>
             </tbody>
             <tfoot>

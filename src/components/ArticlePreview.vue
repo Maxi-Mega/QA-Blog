@@ -24,7 +24,7 @@ const truncate = (text: string): string => {
         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
         loading="lazy"
         v-bind:alt="article.pictureDescription"
-        :src="baseUrl+'/' + article.pictureURL"
+        :src="baseUrl + '/' + article.pictureURL"
       />
     </router-link>
 
