@@ -7,6 +7,8 @@ const props = defineProps<{
 }>();
 const { article } = toRefs(props);
 
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const truncate = (text: string): string => {
   return text.length > 75 ? text.slice(0, 72) + "..." : text;
 };
@@ -22,7 +24,7 @@ const truncate = (text: string): string => {
         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
         loading="lazy"
         v-bind:alt="article.pictureDescription"
-        :src="'./' + article.pictureURL"
+        :src="baseUrl+'/' + article.pictureURL"
       />
     </router-link>
 

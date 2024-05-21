@@ -42,25 +42,8 @@ const article = getArticleBySlug(route.params.slug as string);
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+              <trv-for="_ in [1,2,3,4]">
+                <tdv-for="j in [1,2,3]">{{ j }}</td>
               </tr>
             </tbody>
             <tfoot>
