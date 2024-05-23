@@ -55,7 +55,13 @@ const truncate = (text: string): string => {
           :to="'/article/' + article.slug"
           >Read more of this article
         </router-link>
-        <p>{{ article.comments.length }} comment{{ article.comments.length == 1 ? "" : "s" }}</p>
+        <router-link
+          :to="'/article/' + article.slug + '#comments'"
+          aria-label="Go to article comments"
+          >{{ article.comments.length }} comment{{
+            article.comments.length == 1 ? "" : "s"
+          }}</router-link
+        >
       </div>
     </div>
   </article>
