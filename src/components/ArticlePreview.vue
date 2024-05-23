@@ -29,7 +29,7 @@ const truncate = (text: string): string => {
     </router-link>
 
     <div class="flex flex-col gap-2 p-4 lg:p-6">
-      <span class="text-sm text-gray-400">{{ article.date }}</span>
+      <time class="text-sm text-gray-400">{{ article.date }}</time>
       <div class="flex flex-wrap items-center gap-0.5 text-sm text-gray-400">
         <kbd
           v-for="tag in article.tags"

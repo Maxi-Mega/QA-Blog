@@ -26,12 +26,12 @@ const article = getArticleBySlug(route.params.slug as string);
 
         <div class="md:pt-8">
           <h1
-            class="mb-4 text-center text-2xl font-bold text-gray-200 sm:text-3xl md:mb-6 md:text-left"
+            class="mb-2 text-center text-2xl font-bold text-gray-200 sm:text-3xl md:mb-4 md:text-left"
           >
             {{ article.title }}
           </h1>
-
-          <p class="mb-6 text-gray-300 sm:text-lg md:mb-8">{{ article.content }}</p>
+          <time class="text-sm text-gray-400">{{ article.date }}</time>
+          <p class="mt-4 mb-6 text-gray-300 sm:text-lg md:mb-8">{{ article.content }}</p>
           <br />
           <table class="w-full">
             <thead class="text-center">
