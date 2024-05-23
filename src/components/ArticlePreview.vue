@@ -33,7 +33,7 @@ const truncate = (text: string): string => {
       <time :datetime="article.date.replace(/\//g, '-')" class="text-sm text-gray-400">{{
         article.date
       }}</time>
-      <div class="flex flex-wrap items-center gap-0.5 text-sm text-gray-400">
+      <div class="flex flex-wrap items-center gap-0.5 text-sm text-gray-300">
         <pre
           v-for="tag in article.tags"
           :key="tag"
