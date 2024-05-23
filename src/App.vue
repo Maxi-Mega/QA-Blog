@@ -37,7 +37,10 @@
     </main>
     <footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
       <div class="flex flex-col items-center border-t border-gray-500 pt-6">
-        <nav class="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
+        <nav
+          aria-label="Footer navigation"
+          class="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6"
+        >
           <ul class="flex flex-row gap-3">
             <li>
               <router-link

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { defineProps, toRefs } from "vue";
-import { Article } from "../composables/useArticles.ts";
+import { Article, formatDate } from "../composables/useArticles.ts";
 
 const props = defineProps<{
   article: Article;
@@ -30,7 +30,7 @@ const truncate = (text: string): string => {
     </router-link>
 
     <div class="flex flex-col gap-2 p-4 lg:p-6">
-      <time :datetime="article.date.replace(/\//g, '-')" class="text-sm text-gray-400">{{
+      <time :datetime="formatDate(article.date)" class="text-sm text-gray-400">{{
         article.date
       }}</time>
       <div class="flex flex-wrap items-center gap-0.5 text-sm text-gray-300">

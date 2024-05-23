@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
-import { getArticleBySlug } from "../composables/useArticles.ts";
+import { formatDate, getArticleBySlug } from "../composables/useArticles.ts";
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -30,7 +30,7 @@ const article = getArticleBySlug(route.params.slug as string);
           >
             {{ article.title }}
           </h1>
-          <time :datetime="article.date.replace(/\//g, '-')" class="text-sm text-gray-400">{{
+          <time :datetime="formatDate(article.date)" class="text-sm text-gray-400">{{
             article.date
           }}</time>
           <p class="mb-6 mt-4 text-gray-300 sm:text-lg md:mb-8">{{ article.content }}</p>
@@ -75,7 +75,7 @@ const article = getArticleBySlug(route.params.slug as string);
               <div>
                 <span class="text-sm"
                   >{{ comment.author }} -
-                  <time :datetime="comment.date">{{ comment.date }}</time></span
+                  <time :datetime="formatDate(comment.date)">{{ comment.date }}</time></span
                 >
                 <p>{{ comment.content }}</p>
               </div>

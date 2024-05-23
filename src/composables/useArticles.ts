@@ -89,3 +89,7 @@ export const useArticles = (): Article[] => articles;
 export const getArticleBySlug = (slug: string): Article | undefined => {
   return articles.find((article) => article.slug == slug);
 };
+
+export const formatDate = (date: string): string => {
+  return date.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$3-$2-$1");
+};
