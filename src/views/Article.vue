@@ -55,7 +55,7 @@ const article = getArticleBySlug(route.params.slug as string);
             </tfoot>
           </table>
         </div>
-        <div>
+        <aside>
           <h2
             class="mb-4 text-center text-xl font-bold text-gray-200 sm:text-3xl md:mb-6 md:text-left"
           >
@@ -70,7 +70,7 @@ const article = getArticleBySlug(route.params.slug as string);
               {{ comment }}
             </li>
           </ul>
-        </div>
+        </aside>
       </div>
     </div>
   </div>
