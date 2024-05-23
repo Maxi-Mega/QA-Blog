@@ -19,6 +19,7 @@ const truncate = (text: string): string => {
     <router-link
       class="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48"
       :to="'/article/' + article.slug"
+      aria-hidden="true"
     >
       <img
         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
@@ -29,13 +30,13 @@ const truncate = (text: string): string => {
     </router-link>
 
     <div class="flex flex-col gap-2 p-4 lg:p-6">
-      <time class="text-sm text-gray-400">{{ article.date }}</time>
+      <time :datetime="article.date" class="text-sm text-gray-400">{{ article.date }}</time>
       <div class="flex flex-wrap items-center gap-0.5 text-sm text-gray-400">
-        <kbd
+        <pre
           v-for="tag in article.tags"
           :key="tag"
           class="border-1 break-keep border-gray-500 p-0.5"
-          >{{ tag }}</kbd
+          >{{ tag }}</pre
         >
       </div>
 
@@ -57,7 +58,7 @@ const truncate = (text: string): string => {
         </router-link>
         <router-link
           :to="'/article/' + article.slug + '#comments'"
-          aria-label="Go to article comments"
+          :aria-label="`Go to article comments of article '${article.title}'`"
           >{{ article.comments.length }} comment{{
             article.comments.length == 1 ? "" : "s"
           }}</router-link

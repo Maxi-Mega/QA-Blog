@@ -10,7 +10,7 @@ const article = getArticleBySlug(route.params.slug as string);
 </script>
 
 <template>
-  <div class="py-6 sm:py-8 lg:py-12">
+  <article class="py-6 sm:py-8 lg:py-12">
     <div v-if="article" class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
         <div>
@@ -30,30 +30,33 @@ const article = getArticleBySlug(route.params.slug as string);
           >
             {{ article.title }}
           </h1>
-          <time class="text-sm text-gray-400">{{ article.date }}</time>
+          <time :datetime="article.date" class="text-sm text-gray-400">{{ article.date }}</time>
           <p class="mb-6 mt-4 text-gray-300 sm:text-lg md:mb-8">{{ article.content }}</p>
           <br />
-          <table class="w-full">
-            <thead class="text-center">
-              <tr>
-                <td>Col 1</td>
-                <td>Col 2</td>
-                <td>Col 3</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="_ in [1, 2, 3, 4]">
-                <td v-for="j in [1, 2, 3]">{{ j }}</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr class="text-center text-gray-300">
-                <td>Col 1</td>
-                <td>Col 2</td>
-                <td>Col 3</td>
-              </tr>
-            </tfoot>
-          </table>
+          <figure>
+            <table class="w-full">
+              <thead class="text-center">
+                <tr>
+                  <th>Col 1</th>
+                  <th>Col 2</th>
+                  <th>Col 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="_ in [1, 2, 3, 4]">
+                  <td v-for="j in [1, 2, 3]">{{ j }}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="text-center text-gray-300">
+                  <td>Col 1</td>
+                  <td>Col 2</td>
+                  <td>Col 3</td>
+                </tr>
+              </tfoot>
+            </table>
+            <figcaption>A table displaying some values</figcaption>
+          </figure>
         </div>
         <aside id="comments">
           <h2
@@ -64,16 +67,22 @@ const article = getArticleBySlug(route.params.slug as string);
           <ul>
             <li
               v-for="comment in article.comments"
-              :key="comment"
+              :key="comment.content"
               class="my-3 border-b-2 border-gray-500 p-1"
             >
-              {{ comment }}
+              <div>
+                <span class="text-sm"
+                  >{{ comment.author }} -
+                  <time :datetime="comment.date">{{ comment.date }}</time></span
+                >
+                <p>{{ comment.content }}</p>
+              </div>
             </li>
           </ul>
         </aside>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <style scoped>

@@ -70,7 +70,8 @@ onMounted(() => {
                 required
                 :type="showPasswd ? 'text' : 'password'"
               />
-              <label for="showPasswd" aria-label="Show password"></label><input id="showPasswd" type="checkbox" title="Show password" class="ml-2" />
+              <label for="showPasswd" aria-label="Show password"></label
+              ><input id="showPasswd" type="checkbox" title="Show password" class="ml-2" />
             </div>
             <p
               :class="'mt-1 w-1/12 ' + (capsLock ? 'text-red-700' : 'text-transparent')"
@@ -84,7 +85,7 @@ onMounted(() => {
             <input
               class="w-full cursor-pointer rounded border-2 border-gray-200 px-2 py-1 transition-all hover:rounded-xl hover:bg-gray-100 hover:bg-opacity-5"
               type="submit"
-              value="Go"
+              value="Connection"
             />
           </div>
         </div>

@@ -6,7 +6,11 @@ export interface Article {
   pictureDescription: string;
   tags: string[];
   content: string;
-  comments: string[];
+  comments: {
+    date: string;
+    author: string;
+    content: string;
+  }[];
 }
 
 const articles: Article[] = [
@@ -30,7 +34,10 @@ const articles: Article[] = [
     tags: ["communication", "leadership", "teamwork"],
     content:
       "Effective communication is essential in both personal and professional life. Discover strategies and techniques to enhance your communication skills and build stronger relationships.",
-    comments: ["Nice !", "I do not agree"],
+    comments: [
+      { date: "23/05/2024", author: "John", content: "Nice !" },
+      { date: "23/05/2024", author: "John", content: "I do not agree" },
+    ],
   },
   {
     slug: "the-power-of-positive-thinking",
@@ -41,7 +48,13 @@ const articles: Article[] = [
     tags: ["mindset", "positivity", "self-improvement"],
     content:
       "Positive thinking can transform your life and lead to greater happiness and success. Explore the benefits of cultivating a positive mindset and practical ways to adopt a more optimistic outlook.",
-    comments: ["I do not think that being positive is a positive way of positiving your life."],
+    comments: [
+      {
+        date: "23/05/2024",
+        author: "John",
+        content: "I do not think that being positive is a positive way of positiving your life.",
+      },
+    ],
   },
   {
     slug: "beginner's-guide-to-machine-learning",
@@ -64,9 +77,9 @@ const articles: Article[] = [
     content:
       "Achieving a balanced lifestyle is essential for overall well-being. Discover ten simple yet effective habits that can help you lead a healthier, happier, and more fulfilling life.",
     comments: [
-      "This kind of lifestyle is for noobs",
-      "Eat 5 fruits and vegetables per day",
-      "There are only 9 !",
+      { date: "23/05/2024", author: "John", content: "This kind of lifestyle is for noobs" },
+      { date: "23/05/2024", author: "John", content: "Eat 5 fruits and vegetables per day" },
+      { date: "23/05/2024", author: "John", content: "There are only 9 !" },
     ],
   },
 ];

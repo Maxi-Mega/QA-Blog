@@ -7,7 +7,7 @@
         class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
         :to="{ name: 'Home' }"
       >
-        <img alt="Logo" src="./assets/vue.svg" />
+        <img aria-hidden="true" src="./assets/vue.svg" />
 
         My blog
       </router-link>
