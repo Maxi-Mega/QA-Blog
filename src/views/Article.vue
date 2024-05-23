@@ -30,7 +30,9 @@ const article = getArticleBySlug(route.params.slug as string);
           >
             {{ article.title }}
           </h1>
-          <time :datetime="article.date" class="text-sm text-gray-400">{{ article.date }}</time>
+          <time :datetime="article.date.replace(/\//g, '-')" class="text-sm text-gray-400">{{
+            article.date
+          }}</time>
           <p class="mb-6 mt-4 text-gray-300 sm:text-lg md:mb-8">{{ article.content }}</p>
           <br />
           <figure>
