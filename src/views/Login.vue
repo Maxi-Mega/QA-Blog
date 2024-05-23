@@ -70,7 +70,7 @@ onMounted(() => {
                 required
                 :type="showPasswd ? 'text' : 'password'"
               />
-              <input id="showPasswd" type="checkbox" title="Show password" class="ml-2" />
+              <label for="showPasswd" aria-label="Show password"></label><input id="showPasswd" type="checkbox" title="Show password" class="ml-2" />
             </div>
             <p
               :class="'mt-1 w-1/12 ' + (capsLock ? 'text-red-700' : 'text-transparent')"
