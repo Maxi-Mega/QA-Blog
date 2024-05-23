@@ -25,7 +25,10 @@ onMounted(() => {
   }
 
   showPasswdInput.addEventListener("input", (ev) => {
-    showPasswd.value = ev.target.checked;
+    const target = ev.target;
+    if (target) {
+      showPasswd.value = (target as HTMLInputElement).checked;
+    }
   });
 });
 </script>
