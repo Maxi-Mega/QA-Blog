@@ -20,6 +20,7 @@ const truncate = (text: string): string => {
       class="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48"
       :to="'/article/' + article.slug"
       aria-hidden="true"
+      tabindex="-1"
     >
       <img
         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
@@ -56,6 +57,7 @@ const truncate = (text: string): string => {
         <router-link
           class="font-semibold text-indigo-400 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
           :to="'/article/' + article.slug"
+          :aria-label="'Read more of ' + article.title"
           >Read more of this article
         </router-link>
         <router-link
