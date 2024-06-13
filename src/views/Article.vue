@@ -34,8 +34,7 @@ const article = getArticleBySlug(route.params.slug as string);
             article.date
           }}</time>
           <p class="mb-6 mt-4 text-gray-300 sm:text-lg md:mb-8">{{ article.content }}</p>
-          <br />
-          <figure>
+          <figure class="mt-2">
             <table class="w-full">
               <thead class="text-center">
                 <tr>

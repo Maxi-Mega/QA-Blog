@@ -51,6 +51,8 @@ onMounted(() => {
               autocomplete="username"
               autofocus
               class="border-1 w-full rounded border-gray-300 bg-gray-800 p-1 text-gray-100"
+              minlength="5"
+              maxlength="128"
               name="username"
               placeholder="john.doe@mail.net"
               required
@@ -65,6 +67,7 @@ onMounted(() => {
                 autocomplete="current-password"
                 class="border-1 w-11/12 flex-grow rounded border-gray-300 bg-gray-800 p-1 text-gray-100"
                 minlength="8"
+                maxlength="255"
                 name="password"
                 placeholder=""
                 required
@@ -74,7 +77,7 @@ onMounted(() => {
               ><input id="showPasswd" type="checkbox" title="Show password" class="ml-2" />
             </div>
             <p
-              :class="'mt-1 w-1/12 ' + (capsLock ? 'text-red-700' : 'text-transparent')"
+              :class="'mt-1 w-auto ' + (capsLock ? 'text-red-700' : 'text-transparent')"
               :aria-hidden="!capsLock"
             >
               caps lock is on
